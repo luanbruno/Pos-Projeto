@@ -17,7 +17,7 @@ public class VendaController {
 	@Autowired
 	private VendaService vendaService;
 
-	@GetMapping(value = "/listar")
+	@GetMapping(value = "/listarr")
 	public List<Venda> obterLista() {
 		return vendaService.obterLista();
 	}
