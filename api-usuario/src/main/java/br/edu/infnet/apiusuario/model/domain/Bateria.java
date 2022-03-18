@@ -61,7 +61,7 @@ public class Bateria extends Produto{
 	@Override
 	public String Aplicacao() {
 	
-		return "A bateria de fabricante:"+super.getFabricante() +" é para "+ tipo;
+		return "A bateria do fabricante:"+super.getFabricante() +" é de "+ tipo+" volt " ;
 	}	
 	
 }

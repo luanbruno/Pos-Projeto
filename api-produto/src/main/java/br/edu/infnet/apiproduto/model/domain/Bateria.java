@@ -53,7 +53,7 @@ public class Bateria extends Produto{
 	}
 	public void setAmperagem(int amperagem) throws AmperagemInvalidoException {
 		
-		if (amperagem <= 3) {
+		if (amperagem <= 0) {
 			throw new AmperagemInvalidoException("Aperagem não trabalhada!");
 		}		
 		this.amperagem = amperagem;
@@ -61,7 +61,7 @@ public class Bateria extends Produto{
 	@Override
 	public String Aplicacao() {
 	
-		return "A bateria de fabricante:"+super.getFabricante() +" é para "+ tipo;
+		return "A bateria do fabricante:"+super.getFabricante() +" é de "+ tipo+" volt " ;
 	}	
 	
 }
