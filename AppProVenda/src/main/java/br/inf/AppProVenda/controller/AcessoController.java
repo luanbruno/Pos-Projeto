@@ -26,6 +26,7 @@ public class AcessoController {
 		return "login";
 	}
 	
+	
 	@GetMapping(value = "/logout")
 	public String telaLogout(HttpSession session, SessionStatus status) {
 		

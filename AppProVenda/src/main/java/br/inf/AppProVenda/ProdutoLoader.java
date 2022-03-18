@@ -31,28 +31,27 @@ public class ProdutoLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		
 		Usuario usuario = new Usuario();
-		usuario.setId(1);
 
-		Bateria bateria = new Bateria("varejo", "moura", 1);
+		Bateria bateria = new Bateria("bateria de moto", "moura", 120);
 		bateria.setAmperagem(5);
-		bateria.setTipo("carro");
-		bateria.setPeso("2kg");
+		bateria.setTipo("12 volt");
+		bateria.setPeso("2");
 		bateria.setUsuario(usuario);
 				
 		bateriaService.incluir(bateria);
 		
-		Aditivo aditivo = new Aditivo("atacado", "acdelco", 4);
+		Aditivo aditivo = new Aditivo("aditivo d radiador", "acdelco", 50);
 		aditivo.setComposicao("organico");
 		aditivo.setEmbalagem(500);
-		aditivo.setModelo("prontouso");
+		aditivo.setModelo("pronto-uso");
 		aditivo.setUsuario(usuario);
 				
 		aditivoService.incluir(aditivo);
 		
-		Lubrificante lubrificante = new Lubrificante("varejo", "petronas", 3);
-		lubrificante.setTipo("motor");
-		lubrificante.setRefinamento("15w40");
-		lubrificante.setViscosidade("mineral");
+		Lubrificante lubrificante = new Lubrificante("oleo de motor", "petronas", 30);
+		lubrificante.setRefinamento("mineral");
+		lubrificante.setViscosidade("20w50");
+		lubrificante.setMotor("diesel");
 		lubrificante.setUsuario(usuario);
 				
 		lubrificanteService.incluir(lubrificante);

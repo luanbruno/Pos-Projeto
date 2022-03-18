@@ -12,8 +12,8 @@ public class Bateria extends Produto{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Bateria(String nome, String fabricante, Integer validade) {
-		super(nome,fabricante,validade);
+	public Bateria(String nome, String fabricante, Integer valor) {
+		super(nome,fabricante,valor);
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class Bateria extends Produto{
 	}
 	public void setAmperagem(int amperagem) throws AmperagemInvalidoException {
 		
-		if (amperagem <= 3) {
+		if (amperagem <= 0) {
 			throw new AmperagemInvalidoException("Aperagem não trabalhada!");
 		}		
 		this.amperagem = amperagem;
@@ -56,7 +56,7 @@ public class Bateria extends Produto{
 	@Override
 	public String Aplicacao() {
 	
-		return "A bateria de fabricante:"+super.getFabricante() +" é para "+ tipo;
+		return "A bateria do fabricante:"+super.getFabricante() +" é de "+ tipo+" volt " ;
 	}	
 	
 }

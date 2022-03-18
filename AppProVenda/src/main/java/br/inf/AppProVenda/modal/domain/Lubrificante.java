@@ -6,13 +6,13 @@ public class Lubrificante extends Produto {
 
 	private String refinamento; 
 	private String viscosidade;
-	private String tipo;
+	private String motor;
 	
 	public Lubrificante() {
 	}
 		
-	public Lubrificante(String nome, String fabricante, Integer validade) {
-		super(nome,fabricante,validade);
+	public Lubrificante(String nome, String fabricante, Integer valor) {
+		super(nome,fabricante,valor);
 	}
 	
 	@Override
@@ -24,7 +24,7 @@ public class Lubrificante extends Produto {
 		ip.append(";");
 		ip.append(this.viscosidade);
 		ip.append(";");
-		ip.append(this.tipo);
+		ip.append(this.motor);
 
 		return ip.toString();
 	}
@@ -42,26 +42,25 @@ public class Lubrificante extends Produto {
 	public void setRefinamento(String refinamento) {
 		this.refinamento = refinamento;
 	}
+		
 	
-	
-	public String getTipo() {
-		return tipo;
+	public String getMotor() {
+		return motor;
 	}
 
-	public void setTipo(String tipo) throws MotorInvalidoException {
+	public void setMotor(String motor) throws MotorInvalidoException{
 		
-		if (tipo == "freio") {
-			throw new MotorInvalidoException("Aplicação não trabalhada!");
-		}
+		if (motor != "DIESEL" && motor != "FLEX") {
+			throw new MotorInvalidoException("Oleo de motor não trabalhado");
+		}		
 		
-		
-		this.tipo = tipo;
+		this.motor = motor;
 	}
 
 	@Override
 	public String Aplicacao() {
 
-		return "O oleo do fabricante:"+super.getFabricante()+ " aplicao no "+tipo+ "!";
+		return "O oleo do fabricante:"+super.getFabricante()+ " do modelo "+refinamento+ "!";
 		
 	}
 }

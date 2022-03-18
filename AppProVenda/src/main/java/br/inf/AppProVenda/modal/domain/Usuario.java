@@ -9,10 +9,10 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private boolean admin;
-		private Endereco endereco;	
-		private List<Cliente> clientes;
-		private List<Produto> produtos;
-		private List<Venda> Vendas;
+	private Endereco endereco;	
+	private List<Cliente> clientes;
+	private List<Produto> produtos;
+	private List<Venda> Vendas;
 	
 	public Usuario() {
 	}

@@ -31,7 +31,7 @@ public class ProdutoService {
 		return produtoRepository.findById(id).orElse(null);
 	}
 
-	public Long obterQtd() {
+	public Long obterQtde() {
 		return produtoRepository.count();
 	}
 	

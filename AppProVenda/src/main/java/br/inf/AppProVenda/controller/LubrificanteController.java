@@ -20,6 +20,7 @@ public class LubrificanteController {
 	private LubrificanteService lubrificanteService;
 	@Autowired
 	private ProdutoService produtoService;
+	
 	@GetMapping(value = "/lubrificante")
 	public String telaCadastro() {
 		
@@ -40,7 +41,7 @@ public class LubrificanteController {
 		lubrificante.setUsuario(usuario);
 
 		lubrificanteService.incluir(lubrificante);
-		model.addAttribute("mensagem", "O lubrificante para " + lubrificante.getTipo() + " foi cadastrado com sucesso!!!");
+		model.addAttribute("mensagem", "O lubrificante para motor " + lubrificante.getMotor() + " foi cadastrado com sucesso!!!");
 		return telaLista(model, usuario);
 	}
 
@@ -52,9 +53,9 @@ public class LubrificanteController {
 		try {
 			produtoService.excluir(id);
 
-			model.addAttribute("mensagem", "O lubrificante de "+  lubrificante.getTipo() +" foi removida com sucesso!!!");		
+			model.addAttribute("mensagem", "O lubrificante para motor "+  lubrificante.getMotor() +" foi removida com sucesso!!!");		
 		} catch (Exception e) {
-			model.addAttribute("mensagem", "Impossível remover o lubrificante para "+lubrificante.getTipo()+"!!! Ela está associada a uma venda.");
+			model.addAttribute("mensagem", "Impossível remover o lubrificante para motor "+lubrificante.getMotor()+"!!! Ela está associada a uma venda.");
 		}	
 		
 		return telaLista(model, usuario);

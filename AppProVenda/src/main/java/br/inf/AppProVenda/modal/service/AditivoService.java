@@ -13,29 +13,29 @@ import br.inf.AppProVenda.modal.domain.Usuario;
 public class AditivoService {
 	
 	@Autowired
-	private IAditivoClient aditivoCliente;
+	private IAditivoClient aditivoClient;
 
 	
 	public Long obterQtde() {
-		return aditivoCliente.obterQtde();
+		return aditivoClient.obterQtde();
 	}
 
 	public List<Aditivo> obterLista(){
 
-		return (List<Aditivo>) aditivoCliente.obterLista();
+		return (List<Aditivo>) aditivoClient.obterLista();
 	}
 	
 	public List<Aditivo> obterLista(Usuario usuario){
-		return (List<Aditivo>) aditivoCliente.obterLista(usuario.getId());
+		return (List<Aditivo>) aditivoClient.obterLista(usuario.getId());
 	}
 
 	public void incluir(Aditivo aditivo) {
 
-		aditivoCliente.incluir(aditivo);
+		aditivoClient.incluir(aditivo);
 	}
 
 	public Aditivo obterPorId(Integer id) {
 
-		return aditivoCliente.obterPorId(id);
+		return aditivoClient.obterPorId(id);
 	}
 }

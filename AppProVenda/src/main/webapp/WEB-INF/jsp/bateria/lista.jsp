@@ -37,23 +37,25 @@
 		<table class="table table-striped">
 		    <thead>
 		      <tr> 
+				<th>ID</th>		      
 		        <th>peso</th>
 				<th>amperagem</th>
 				<th>tipo</th>
 				<th>nome</th>
 				<th>fabricante</th>
-				<th>validade</th>
+				<th>valor</th>
 		      </tr>
 		    </thead>
 		    <tbody>
 		      <c:forEach var="l" items="${lista}">
 			      <tr>
+			       	<td>${b.id}</td>
 			        <td>${l.peso}</td>
 			        <td>${l.amperagem}</td>
 			        <td>${l.tipo}</td>
 			        <td>${l.nome}</td>
 			        <td>${l.fabricante}</td>
-			        <td>${l.validade}</td>
+			        <td>${l.valor}</td>
 			        <td><a href="/bateria/${l.id}/excluir">excluir</a></td>
 			      </tr>
 		      </c:forEach>		      

@@ -32,7 +32,7 @@ public abstract class Produto {
 	private Integer id;
 	private String nome;
 	private String fabricante;
-	private int validade;
+	private int valor;
 
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
@@ -42,10 +42,10 @@ public abstract class Produto {
 		
 	}
 	
-	public Produto(String nome, String fabricante, Integer validade) {
+	public Produto(String nome, String fabricante, Integer valor) {
 		this.nome = nome;
 		this.fabricante = fabricante;
-		this.validade = validade;
+		this.valor = valor;
 	}
 	
 	
@@ -62,7 +62,7 @@ public abstract class Produto {
 		ip.append(';');
 		ip.append(fabricante);
 		ip.append(';');
-		ip.append(validade);
+		ip.append(valor);
 		ip.append(";");
 		ip.append(this.Aplicacao());
 		
@@ -93,12 +93,12 @@ public abstract class Produto {
 		this.fabricante = fabricante;
 	}
 
-	public int getValidade() {
-		return validade;
+	public int getValor() {
+		return valor;
 	}
 
-	public void setValidade(int validade) {
-		this.validade = validade;
+	public void setValor(int valor) {
+		this.valor = valor;
 	}
 
 	public Usuario getUsuario() {

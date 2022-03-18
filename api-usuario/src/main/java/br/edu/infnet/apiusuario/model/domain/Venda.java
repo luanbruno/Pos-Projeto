@@ -26,7 +26,7 @@ public class Venda {
 	private Integer id;
 
 	private LocalDateTime data;
-	private int qtd;
+	private String movimento;	
 	private String tipo;
 	
 	@OneToOne(cascade = CascadeType.DETACH) 
@@ -51,10 +51,10 @@ public class Venda {
 		
 		DateTimeFormatter data = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		
-		String mensagem = String.format("%d;%s;%d;%s;%s;%d",
+		String mensagem = String.format("%d;%s;%s;%s;%s;%d",
 				this.id,
 				this.data.format(data), 
-				this.qtd, 
+				this.movimento, 
 				this.tipo, 
 				this.cliente, 
 				this.produtos.size()
@@ -78,14 +78,14 @@ public class Venda {
 	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
-
-	public int getQtd() {
-		return qtd;
+	public String getMovimento() {
+		return movimento;
 	}
 
-	public void setQtd(int qtd) {
-		this.qtd = qtd;
+	public void setMovimento(String movimento) {
+		this.movimento = movimento;
 	}
+	
 
 	public String getTipo() {
 		return tipo;

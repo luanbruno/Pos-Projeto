@@ -42,7 +42,7 @@ public class AditivoController {
 	
 	@GetMapping(value = "/qtde/aditivo")
 	public Long obterQtde() {
-		return null;
+		return aditivoService.obterQtde();
 	}
 	
 }

@@ -42,7 +42,7 @@ public class BateriaController {
 	
 	@GetMapping(value = "/qtde/bateria")
 	public Long obterQtde() {
-		return null;
+		return bateriaService.obterQtde();
 	}
 	
 }

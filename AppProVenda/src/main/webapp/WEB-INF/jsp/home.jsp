@@ -14,7 +14,7 @@
 	<div class="container mt-3">
   <h1>Engenharia de Software - Java</h1>
   <h2>Java Web</h2>
-  <h3><a href="https://github.com/luanbruno/PosJavaInfnet">AppProVenda: sistema de gestão de venda</a></h3>
+  <h3><a href="https://github.com/luanbruno/Pos-Projeto">AppProVenda: sistema de gestão de venda</a></h3>
   
 </div>
 </body>

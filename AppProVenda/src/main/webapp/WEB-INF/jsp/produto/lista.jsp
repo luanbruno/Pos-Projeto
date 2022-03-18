@@ -35,7 +35,7 @@
 		      	<th>ID</th>
 		      	<th>nome</th>
 		      	<th>fabricante</th>
-		        <th>validade</th>
+		        <th>valor</th>
 
 		      </tr>
 		    </thead>
@@ -45,7 +45,7 @@
 			        <td>${p.id}</td>
 			        <td>${p.nome}</td>
 			        <td>${p.fabricante}</td>
-			        <td>${p.validade}</td>
+			        <td>${p.valor}</td>
 			        <td><a href="/produto/${p.id}/excluir">excluir</a></td>
 			      </tr>
 		      </c:forEach>		      

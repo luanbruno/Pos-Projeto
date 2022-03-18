@@ -42,7 +42,7 @@ public class LubrificanteController {
 	
 	@GetMapping(value = "/qtde/lubrificante")
 	public Long obterQtde() {
-		return null;
+		return lubrificanteService.obterQtde();
 	}
 	
 }

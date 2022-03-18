@@ -10,8 +10,8 @@ public class Aditivo extends Produto{
 	private int embalagem;
 	
 	
-	public Aditivo(String nome, String fabricante, Integer validade){
-		super(nome,fabricante,validade);
+	public Aditivo(String nome, String fabricante, Integer valor){
+		super(nome,fabricante,valor);
 	}
 	
 	@Override

@@ -23,27 +23,30 @@
 	  <form action="/bateria/incluir" method="post">
 	  <div class="mb-3 mt-3">
 	      <label>nome:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu nome" name="nome" value="bateria de moto">
+	      <input type="text" class="form-control" placeholder="Entre com nome do produto" name="nome" value="Bateria de moto">
 	    </div>
 	    <div class="mb-3 mt-3">
 	      <label>fabricante:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu fabricante" name="fabricante" value="heliar">
+	      <input type="text" class="form-control" placeholder="Entre com o fabricante" name="fabricante" value="moura">
 	    </div>
 	    <div class="mb-3 mt-3">
-	      <label>validade:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu validade" name="validade" value="1">
+	      <label>valor:</label>
+	      <input type="text" class="form-control" placeholder="Entre com o preço" name="valor" value="120">
 	    </div>
 	    <div class="mb-3 mt-3">
 	      <label>peso:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu peso" name="peso" value="2">
+	      <input type="text" class="form-control" placeholder="Entre com o peso" name="peso" value="3">
 	    </div>
 	    <div class="mb-3 mt-3">
 	      <label>amperagem:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu amperagem" name="amperagem" value="2">
+	      <input type="text" class="form-control" placeholder="Entre com a amperagem" name="amperagem" value="4">
 	    </div>
 	    <div class="mb-3 mt-3">
-	      <label>tipo:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu tipo" name="tipo" value="moto">
+	      <label>Voltagem:</label>
+	      	<select class="custom-select custom-select-sm mb-3" name="tipo">
+		      <option value="12" selected>12 Volt</option>
+		      <option value="24" >24 Volt</option>
+		      </select>
 	    </div>
 		
 	    <button type="submit" class="btn btn-primary">Cadastrar</button>

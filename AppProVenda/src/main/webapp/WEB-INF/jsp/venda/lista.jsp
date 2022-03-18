@@ -32,15 +32,17 @@
 	  <hr>
 		
 	<c:if test="${not empty lista}">		
-		<h2>Total de produtos: ${lista.size()}</h2>
+		<h2>Total de vendas: ${lista.size()}</h2>
 		  
 		<table class="table table-striped">
 		    <thead>
 		      <tr>
 		       <th>id</th>
 		        <th>data</th>
-		        <th>quantidade</th>
 		        <th>tipo</th>
+		        <th>movimento</th>
+		        <th>Cliente</th>
+		        <th>Produtos</th>
 
 		      </tr>
 		    </thead>
@@ -49,8 +51,10 @@
 			      <tr>
 			      	<td>${s.id}</td>
 			        <td>${s.data}</td>
-		        	<td>${s.qtd}</td>
-		        	<td>${s.tipo}</td>
+			        <td>${s.tipo}</td>
+		        	<td>${s.movimento}</td>		        	
+		        	<td>${p.clientes.nome}</td>
+			        <td>${p.produtos.size()}</td>
 			        <td><a href="/venda/${s.id}/excluir">excluir</a></td>
 			      </tr>
 		      </c:forEach>		      
@@ -59,7 +63,7 @@
     </c:if>	  	  
 
 	<c:if test="${empty lista}">		
-	  <h2>Não existem produto cadastrados!!!</h2>
+	  <h2>Não existem vendas cadastradas!!!</h2>
 	</c:if>
 
 	</div>

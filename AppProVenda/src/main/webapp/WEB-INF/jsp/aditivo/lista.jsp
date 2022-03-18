@@ -37,23 +37,25 @@
 		<table class="table table-striped">
 		    <thead>
 		      <tr>
+		      	<th>ID</th>
 		        <th>composicao</th>
 				<th>modelo</th>
 				<th>embalagem</th>
 				<th>nome</th>
 				<th>fabricante</th>
-				<th>validade</th>
+				<th>valor</th>
 		      </tr>
 		    </thead>
 		    <tbody>
 		      <c:forEach var="a" items="${lista}">
 			      <tr>
+			      	<td>${b.id}</td>
 			        <td>${a.composicao}</td>
 			        <td>${a.modelo}</td>
 			        <td>${a.embalagem}</td>
 			        <td>${a.nome}</td>
 			        <td>${a.fabricante}</td>
-			        <td>${a.validade}</td>
+			        <td>${a.valor}</td>
 			        <td><a href="/aditivo/${a.id}/excluir">excluir</a></td>
 			      </tr>
 		      </c:forEach>		      
@@ -62,7 +64,7 @@
     </c:if>	  	  
 
 	<c:if test="${empty lista}">		
-	  <h2>Não existem lubrificante cadastrados!!!</h2>
+	  <h2>Não existem aditivo cadastrados!!!</h2>
 	</c:if>
 
 	</div>

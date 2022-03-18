@@ -16,11 +16,11 @@ import br.inf.AppProVenda.modal.service.ProdutoService;
 @Controller
 public class BateriaController {
 	
-
 	@Autowired
 	private BateriaService bateriaService;
 	@Autowired
 	private ProdutoService produtoService;
+	
 	@GetMapping(value = "/bateria")
 	public String telaCadastro() {
 		
@@ -54,9 +54,9 @@ public class BateriaController {
 		try {
 			produtoService.excluir(id);
 
-			model.addAttribute("mensagem", "A bateria de "+  bateria.getTipo() +" foi removida com sucesso!!!");		
+			model.addAttribute("mensagem", "A bateria de "+  bateria.getTipo() +"  volt foi removida com sucesso!!!");		
 		} catch (Exception e) {
-			model.addAttribute("mensagem", "Impossível remover A bateria de "+bateria.getTipo()+"!!! Ela está associada a uma venda.");
+			model.addAttribute("mensagem", "Impossível remover A bateria de "+bateria.getTipo()+"volt !!! Ela está associada a uma venda.");
 		}	
 		
 		return telaLista(model, usuario);

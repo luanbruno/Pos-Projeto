@@ -14,6 +14,9 @@ public interface IProdutoClient {
 
 	@GetMapping(value = "/listar")
 	public List<Produto> obterLista();
+	
+	@GetMapping(value = "/{id}")
+	public Produto obterPorId(@PathVariable Integer id);
 
 	@GetMapping(value = "/{idUser}/listar")
 	public List<Produto> obterLista(@PathVariable Integer idUser);
@@ -24,6 +27,5 @@ public interface IProdutoClient {
 	@GetMapping(value = "/qtde")
 	public Long obterQtde();
 
-	@GetMapping(value = "/{id}")
-	public Produto obterPorId(@PathVariable Integer id);
+	
 }

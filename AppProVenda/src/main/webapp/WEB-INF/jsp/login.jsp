@@ -23,12 +23,12 @@
 	  <form action="/login" method="post">
 	    <div class="mb-3 mt-3">
 	      <label>E-mail:</label>
-	      <input type="email" class="form-control" placeholder="Entre com o seu e-mail" name="email" value="luan.branco@infnet.edu.br">
+	      <input type="email" class="form-control" placeholder="Entre com o seu e-mail" name="email" value="admin@infnet.edu.br">
 	    </div>
 
 	    <div class="mb-3">
 	      <label>Senha:</label>
-	      <input type="password" class="form-control" placeholder="Entre com a sua senha" name="senha" value="12345">
+	      <input type="password" class="form-control" placeholder="Entre com a sua senha" name="senha" value="123">
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">Acessar</button>

@@ -13,8 +13,8 @@ import br.inf.AppProVenda.modal.domain.Aditivo;
 @FeignClient(url = "localhost:8083/api/produto", name = "aditivoClient")
 public interface IAditivoClient {
 
-	@PostMapping(value = "/incluir/bateeria")
-	public void incluir(@RequestBody Aditivo lubrificante);
+	@PostMapping(value = "/incluir/aditivo")
+	public void incluir(@RequestBody Aditivo aditivo);
 
 	@GetMapping(value = "/listar/aditivo")
 	public List<Aditivo> obterLista();

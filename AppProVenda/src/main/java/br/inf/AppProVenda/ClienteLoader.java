@@ -11,18 +11,21 @@ import org.springframework.stereotype.Component;
 import br.inf.AppProVenda.modal.domain.Cliente;
 import br.inf.AppProVenda.modal.domain.Usuario;
 import br.inf.AppProVenda.modal.service.ClienteService;
+import br.inf.AppProVenda.modal.service.UsuarioService;
 
 @Component
 @Order(2)
 public class ClienteLoader implements ApplicationRunner {
 
 	@Autowired
+	private UsuarioService usuarioService;
+	@Autowired
 	private ClienteService clienteService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
-		Usuario usuario = new Usuario();
+		Usuario usuario = usuarioService.validar("admin@infnet.edu.br", "123");
 		usuario.setId(1);
 		
 		Cliente cliente = new Cliente();

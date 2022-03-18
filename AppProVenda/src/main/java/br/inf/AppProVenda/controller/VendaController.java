@@ -52,9 +52,8 @@ public class VendaController {
 	@PostMapping(value = "/venda/incluir")
 	public String incluir(Model model, Venda venda, @RequestParam String[] produtosId, @SessionAttribute("user") Usuario usuario) {
 		
-		//System.out.println(Arrays.toString(produtosId));
 		
-		List<Produto> produtos = new ArrayList<>();
+		List<Produto> produtos = new ArrayList<Produto>();
 		
 		for (String id : produtosId) {
 			
@@ -64,7 +63,6 @@ public class VendaController {
 			
 			produtos.add(produto);
 			
-			//produtos.add(produtoService.obterPorId(Integer.valueOf(id)));
 		}
 		
 		venda.setProdutos(produtos);	

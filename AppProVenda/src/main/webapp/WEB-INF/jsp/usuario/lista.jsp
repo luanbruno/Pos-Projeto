@@ -34,9 +34,7 @@
 		        <th>Cliente</th>
 		        <th>Produtos</th>
 		        <th>Vendas</th>
-		        <c:if test="${user.admin}">
-		        	<th></th>
-		        </c:if>
+		        
 		      </tr>
 		    </thead>
 		    <tbody>

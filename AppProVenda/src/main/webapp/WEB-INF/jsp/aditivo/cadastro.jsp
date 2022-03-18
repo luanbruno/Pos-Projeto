@@ -23,15 +23,15 @@
 	  <form action="/aditivo/incluir" method="post">
 	  <div class="mb-3 mt-3">
 	      <label>nome:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu nome" name="nome" value="aditivo">
+	      <input type="text" class="form-control" placeholder="Entre com nome do produto" name="nome" value="aditivo de radiador">
 	    </div>
 	    <div class="mb-3 mt-3">
 	      <label>fabricante:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu fabricante" name="fabricante" value="petronas">
+	      <input type="text" class="form-control" placeholder="Entre com o fabricante" name="fabricante" value="paraflu">
 	    </div>
 	    <div class="mb-3 mt-3">
-	      <label>validade:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu validadde" name="validade" value="3">
+	      <label>valor:</label>
+	      <input type="text" class="form-control" placeholder="Entre com o preço" name="valor" value="27">
 	    </div>
 	    <div class="mb-3 mt-3">
 	      <label>refinamento:</label>
@@ -39,11 +39,15 @@
 	    </div>
 	    <div class="mb-3 mt-3">
 	      <label>viscosidade:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu moddelo" name="modelo" value="rosa">
+	      <input type="text" class="form-control" placeholder="Entre com o seu modelo" name="modelo" value="concentrado">
 	    </div>
 	    <div class="mb-3 mt-3">
-	      <label>tipo:</label>
-	      <input type="text" class="form-control" placeholder="Entre com o seu embalagem" name="embalagem" value="500">
+	      <label>Embalagm:</label>
+	      <select class="custom-select custom-select-sm mb-3" name="embalagem">
+		      <option value="500" >500 ml</option>
+		      <option value="1" selected>1 litro</option>
+		      <option value="20" >20 litros</option>
+		      </select>
 	    </div>
 		
 	    <button type="submit" class="btn btn-primary">Cadastrar</button>

@@ -52,12 +52,12 @@ public class AppController {
 		
 		Map<String, Long> mapa = new HashMap<String, Long>();
 		mapa.put("Usuários", usuarioService.obterQtde());
-		mapa.put("Clientes", clienteService.obterQtd());
+		mapa.put("Clientes", clienteService.obterQtde());
 		mapa.put("Produto", produtoService.obterQtde());
 		mapa.put("Lubrificante", lubrificanteService.obterQtde());
 		mapa.put("Aditivo", aditivoService.obterQtde());
 		mapa.put("Bateria", bateriaService.obterQtde());
-		mapa.put("Venda",VendaService.obterQtd());
+		mapa.put("Venda",VendaService.obterQtde());
 		
 		
 		model.addAttribute("myMap", mapa);

@@ -1,6 +1,7 @@
 package br.edu.infnet.apicliente.model.domain;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;	
 	private String nome;
+	@Column(unique = true)
 	private String email;
 	private String cpf;
 	@OneToOne(cascade = CascadeType.PERSIST)

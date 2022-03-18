@@ -45,4 +45,8 @@ public class ProdutoController {
 	public Produto obterPorId(@PathVariable Integer id) {
 		return produtoService.obterPorId(id);
 	}
+	@GetMapping(value = "/qtde")
+	public Long obterQtde() {
+		return produtoService.obterQtde();
+	}
 }

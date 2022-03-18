@@ -42,18 +42,19 @@
 	  	</div>
 	  
 	    <div class="mb-3 mt-3">
-	      <label>Quantidade:</label>
-	      <input type="text" class="form-control" placeholder="Entre com a quantidade" name="qtd" value="qtd">
+	    	<label>Selecionar:</label> 
+	     	<select class="custom-select custom-select-sm mb-3" name="tipo">
+		      <option value="Varejo" selected>>Varejo</option>
+		      <option value="Atacado">Atacado</option>
+    	</select>
 	    </div>
 	    <div class="mb-3 mt-3">
-	      <label>linha:</label>
-			<div class="checkbox">
-			  <label><input type="checkbox" value="leve" name="web">Linha leve</label>
-			  <label><input type="checkbox" value="pesada" name="web">Linha pesada</label>
-			  <label><input type="checkbox" value="pesada" name="web">Linha maritima</label>
-			</div>
+	    	<label>Selecionar:</label> 
+	     	<select class="custom-select custom-select-sm mb-3" name="movimento">
+		      <option value="Retirada"  selected>Retirada</option>
+		      <option value="Entrega">Entrega</option>
+    	</select>
 	    </div>
-	    
 	     <div class="mb-3 mt-3" style="margin-top:20px">
   	    	<c:if test="${not empty produtos}">		
 		    	<label>Produtos:</label>
