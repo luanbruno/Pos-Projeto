@@ -55,9 +55,12 @@ public class Lubrificante extends Produto {
 
 	public void setMotor(String motor) throws MotorInvalidoException{
 		
-		if (motor != "DIESEL" && motor != "FLEX") {
+
+		if (motor.equals("diesel") != motor.equals("flex")) {
+			
+		}else {
 			throw new MotorInvalidoException("Oleo de motor não trabalhado");
-		}		
+		}
 		
 		this.motor = motor;
 	}
