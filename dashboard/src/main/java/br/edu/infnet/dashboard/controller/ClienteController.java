@@ -5,19 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.infnet.dashboard.model.service.SolicitanteService;
+import br.edu.infnet.dashboard.model.service.ClienteService;
 
 @Controller
 public class ClienteController {
 	
 	@Autowired
-	private SolicitanteService solicitanteService;
+	private ClienteService clienteService;
 
-	@GetMapping(value = "/solicitantes")
+	@GetMapping(value = "/clientes")
 	public String obterLista(Model model) {
 		
-		model.addAttribute("listagem", solicitanteService.obterLista());
+		model.addAttribute("listagem", clienteService.obterLista());
 		
-		return "lista/solicitantes";
+		return "lista/clientes";
 	}
 }

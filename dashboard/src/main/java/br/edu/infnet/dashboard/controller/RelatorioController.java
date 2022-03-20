@@ -16,16 +16,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import br.edu.infnet.dashboard.model.domain.Log;
-import br.edu.infnet.dashboard.model.domain.Pedido;
 import br.edu.infnet.dashboard.model.domain.Produto;
+import br.edu.infnet.dashboard.model.domain.Venda;
 import br.edu.infnet.dashboard.model.service.LogService;
-import br.edu.infnet.dashboard.model.service.PedidoService;
+import br.edu.infnet.dashboard.model.service.VendaService;
 
 @Controller
 public class RelatorioController {
 	
 	@Autowired
-	private PedidoService pedidoService;
+	private VendaService vendaService;
 	@Autowired
 	private LogService logService;
 
@@ -36,9 +36,9 @@ public class RelatorioController {
 		
 		Sheet abaProdutos = workbook.createSheet("Produtos");
 				
-		String[] columns = {"Data", "Descrição", "Tipo", 
-							"Nome do solicitante", "E-mail do solicitante", "CPF do solicitante", "UF solicitante",
-							"Descrição do produto", "Valor do produto"};
+		String[] columns = {"Data", "Movimento da venda", "Tipo da venda", 
+							"Nome do cliente", "E-mail do cliente", "CPF do clinte", "UF cliente",
+							"fabricante do produto", "Valor do produto"};
 
 		Row headerRow = abaProdutos.createRow(0);
 		
@@ -46,28 +46,28 @@ public class RelatorioController {
 			headerRow.createCell(i).setCellValue(columns[i]);
 		}
 		
-		List<Pedido> pedidos = pedidoService.obterLista();
+		List<Venda> vendas = vendaService.obterLista();
 		
 		int rowNum = 0;
 		
-		for(Pedido pedido : pedidos) {
+		for(Venda venda : vendas) {
 			
-			for(Produto produto : pedido.getProdutos()) {
+			for(Produto produto : venda.getProdutos()) {
 				Row row = abaProdutos.createRow(++rowNum);
 				
 				row.createCell(0).setCellValue(
-						pedido.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
+						venda.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
 					);
-				row.createCell(1).setCellValue(pedido.getDescricao());
-				row.createCell(2).setCellValue(pedido.isWeb() ? "web" : "loja");
-				row.createCell(3).setCellValue(pedido.getSolicitante().getNome());
-				row.createCell(4).setCellValue(pedido.getSolicitante().getEmail());
-				row.createCell(5).setCellValue(pedido.getSolicitante().getCpf());
+				row.createCell(1).setCellValue(venda.getMovimento());
+				row.createCell(2).setCellValue(venda.getTipo());
+				row.createCell(3).setCellValue(venda.getCliente().getNome());
+				row.createCell(4).setCellValue(venda.getCliente().getEmail());
+				row.createCell(5).setCellValue(venda.getCliente().getCpf());
 				row.createCell(6).setCellValue(
-						pedido.getSolicitante().getEndereco() != null ? 
-								pedido.getSolicitante().getEndereco().getUf() : ""
+						venda.getCliente().getEndereco() != null ? 
+								venda.getCliente().getEndereco().getUf() : ""
 							);
-				row.createCell(7).setCellValue(produto.getDescricao());
+				row.createCell(7).setCellValue(produto.getFabricante());
 				row.createCell(8).setCellValue(produto.getValor());
 			}
 		}

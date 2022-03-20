@@ -52,7 +52,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Pedidos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Vendas</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -60,8 +60,8 @@
                                     <thead>
                                         <tr>
                                             <th>Data</th>
-                                            <th>Descrição</th>
-                                            <th>Solicitante</th>
+                                            <th>Tipo</th>
+                                            <th>Cliente</th>
                                             <th>Produtos</th>
                                         </tr>
                                     </thead>
@@ -69,7 +69,7 @@
                                         <tr>
                                             <th>Data</th>
                                             <th>Descrição</th>
-                                            <th>Solicitante</th>
+                                            <th>Cliente</th>
                                             <th>Produtos</th>
                                         </tr>
                                     </tfoot>
@@ -77,8 +77,8 @@
                                     	<c:forEach var="p" items="${listagem}">
                                         <tr>
                                             <td>${p.data}</td>
-                                            <td>${p.descricao}</td>
-                                            <td>${p.solicitante.nome}</td>
+                                            <td>${p.Tipo}</td>
+                                            <td>${p.cliente.nome}</td>
                                             <td>${p.produtos.size()}</td>
                                         </tr>
                                         </c:forEach>

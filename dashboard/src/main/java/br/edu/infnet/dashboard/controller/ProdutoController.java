@@ -5,8 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.infnet.dashboard.model.exceptions.PesoInvalidoException;
-import br.edu.infnet.dashboard.model.exceptions.ValorInvalidoException;
 import br.edu.infnet.dashboard.model.service.ProdutoService;
 
 @Controller
@@ -16,7 +14,7 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 
 	@GetMapping(value = "/produtos")
-	public String obterLista(Model model) throws ValorInvalidoException, PesoInvalidoException {
+	public String obterLista(Model model){
 		
 		model.addAttribute("listagem", produtoService.obterLista());		
 

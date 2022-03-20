@@ -59,24 +59,24 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Descrição</th>
+                                            <th>Nome</th>
+                                            <th>Fabricante</th>
                                             <th>Valor</th>
-                                            <th>Peso</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Descrição</th>
+                                            <th>Nome</th>
+                                            <th>Fabricante</th>
                                             <th>Valor</th>
-                                            <th>Peso</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     	<c:forEach var="p" items="${listagem}">
                                         <tr>
-                                            <td>${p.descricao}</td>
+                                            <td>${p.nome}</td>
+                                            <td>${p.fabricante}</td>
                                             <td>${p.valor}</td>
-                                            <td>${p.peso}</td>
                                         </tr>
                                         </c:forEach>
                                     </tbody>

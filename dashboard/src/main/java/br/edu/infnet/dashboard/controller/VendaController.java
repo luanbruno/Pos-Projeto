@@ -5,9 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.infnet.dashboard.model.exceptions.PesoInvalidoException;
-import br.edu.infnet.dashboard.model.exceptions.ValorInvalidoException;
-import br.edu.infnet.dashboard.model.service.PedidoService;
+import br.edu.infnet.dashboard.model.service.VendaService;
 
 @Controller
 public class VendaController {
@@ -16,10 +14,10 @@ public class VendaController {
 	private VendaService vendaService;
 
 	@GetMapping(value = "/vendas")
-	public String obterLista(Model model) throws ValorInvalidoException, PesoInvalidoException {
+	public String obterLista(Model model) {
 		
-		model.addAttribute("listagem", pedidoService.obterLista());
+		model.addAttribute("listagem", vendaService.obterLista());
 		
-		return "lista/pedidos";
+		return "lista/vendas";
 	}
 }

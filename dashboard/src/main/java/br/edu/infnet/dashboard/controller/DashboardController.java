@@ -8,12 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import br.edu.infnet.dashboard.model.domain.Usuario;
-import br.edu.infnet.dashboard.model.service.BebidaService;
-import br.edu.infnet.dashboard.model.service.ComidaService;
+import br.edu.infnet.dashboard.model.service.AditivoService;
+import br.edu.infnet.dashboard.model.service.BateriaService;
 import br.edu.infnet.dashboard.model.service.LogService;
-import br.edu.infnet.dashboard.model.service.PedidoService;
-import br.edu.infnet.dashboard.model.service.SobremesaService;
+import br.edu.infnet.dashboard.model.service.LubrificanteService;
 import br.edu.infnet.dashboard.model.service.UsuarioService;
+import br.edu.infnet.dashboard.model.service.VendaService;
 
 @Controller
 public class DashboardController {
@@ -22,16 +22,16 @@ public class DashboardController {
 	private UsuarioService usuarioService;
 
 	@Autowired
-	private PedidoService pedidoService;
+	private VendaService vendaService;
 	
 	@Autowired
-	private BebidaService bebidaService;
+	private AditivoService aditivoService;
 
 	@Autowired
-	private ComidaService comidaService;
+	private BateriaService bateriaService;
 
 	@Autowired
-	private SobremesaService sobremesaService;
+	private LubrificanteService LubrificanteService;
 
 	@Autowired
 	private LogService logService;
@@ -41,16 +41,16 @@ public class DashboardController {
 
 		//produtos e pedidos por usuário
 		List<Usuario> usuarios = usuarioService.obterLista();		
-		model.addAttribute("pedidosPorUsuario", usuarios);		
+		model.addAttribute("vendasPorUsuario", usuarios);		
 		model.addAttribute("produtosPorUsuario", usuarios);
 		
-		//quantidade de pedidos
-		model.addAttribute("qtdePedidos", pedidoService.obterQuantidade());
+		//quantidade de vendas
+		model.addAttribute("qtdeVendas", vendaService.obterQuantidade());
 		
 		//valor de vendos dos produtos
-		model.addAttribute("valorVendaBebida", bebidaService.calcularValorVenda());
-		model.addAttribute("valorVendaComida", comidaService.calcularValorVenda());
-		model.addAttribute("valorVendaSobremsa", sobremesaService.calcularValorVenda());
+		model.addAttribute("valorVendaAditivo", aditivoService.calcularValorVenda());
+		model.addAttribute("valorVendaBateria", bateriaService.calcularValorVenda());
+		model.addAttribute("valorVendaLubrificante", LubrificanteService.calcularValorVenda());
 
 		//recuperar o log
 		model.addAttribute("listaLog", logService.obterLista());
