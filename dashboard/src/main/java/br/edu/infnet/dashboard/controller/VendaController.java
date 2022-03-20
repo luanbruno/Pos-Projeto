@@ -10,12 +10,12 @@ import br.edu.infnet.dashboard.model.exceptions.ValorInvalidoException;
 import br.edu.infnet.dashboard.model.service.PedidoService;
 
 @Controller
-public class PedidoController {
+public class VendaController {
 	
 	@Autowired
-	private PedidoService pedidoService;
+	private VendaService vendaService;
 
-	@GetMapping(value = "/pedidos")
+	@GetMapping(value = "/vendas")
 	public String obterLista(Model model) throws ValorInvalidoException, PesoInvalidoException {
 		
 		model.addAttribute("listagem", pedidoService.obterLista());

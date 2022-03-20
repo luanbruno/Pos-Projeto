@@ -34,7 +34,7 @@ public class ProdutoLoader implements ApplicationRunner {
 
 		Bateria bateria = new Bateria("bateria de moto", "moura", 120);
 		bateria.setAmperagem(5);
-		bateria.setTipo("12 volt");
+		bateria.setTipo("12");
 		bateria.setPeso("2");
 		bateria.setUsuario(usuario);
 				

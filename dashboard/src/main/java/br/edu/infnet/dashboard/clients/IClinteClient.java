@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.edu.infnet.dashboard.model.domain.Solicitante;
+import br.edu.infnet.dashboard.model.domain.Cliente;
 
-@FeignClient(url = "localhost:8084/api/solicitante", name = "solicitanteClient")
-public interface ISolicitanteClient {
+@FeignClient(url = "localhost:8084/api/clinte", name = "clienteClient")
+public interface IClinteClient {
 
 	@GetMapping(value = "/listar")
-	public List<Solicitante> obterLista();
+	public List<Cliente> obterLista();
 }

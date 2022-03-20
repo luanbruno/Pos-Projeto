@@ -1,12 +1,8 @@
-package br.edu.infnet.apiusuario.model.domain;
+package br.edu.infnet.dashboard.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import br.edu.infnet.dashboard.model.exceptions.MotorInvalidoException;
 
-import br.edu.infnet.apiusuario.model.exceptions.MotorInvalidoException;
 
-@Entity
-@Table(name = "TLubrificante")
 public class Lubrificante extends Produto {
 
 	private String refinamento; 
@@ -47,13 +43,13 @@ public class Lubrificante extends Produto {
 	public void setRefinamento(String refinamento) {
 		this.refinamento = refinamento;
 	}
-		
+	
 	
 	public String getMotor() {
 		return motor;
 	}
 
-public void setMotor(String motor) throws MotorInvalidoException{
+	public void setMotor(String motor) throws MotorInvalidoException{
 		
 
 		if (motor.equals("diesel") != motor.equals("flex")){

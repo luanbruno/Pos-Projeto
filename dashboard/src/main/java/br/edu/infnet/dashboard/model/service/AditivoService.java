@@ -6,24 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.dashboard.clients.IProdutoClient;
-import br.edu.infnet.dashboard.model.domain.Comida;
+import br.edu.infnet.dashboard.model.domain.Aditivo;
 
 @Service
-public class ComidaService {
+public class AditivoService {
 	
 	@Autowired
 	private IProdutoClient produtoClient;
 	
-	public List<Comida> obterLista() {
-		return produtoClient.obterComidaLista();
+	public List<Aditivo> obterLista() {
+		return produtoClient.obterAditivoLista();
 	}
 	
 	public float calcularValorVenda() {
 		
 		float valorVenda = 0;
 		
-		for(Comida comida : produtoClient.obterComidaLista()) {
-			valorVenda = valorVenda + comida.calcularValorVenda();
+		for(Aditivo aditivo : produtoClient.obterAditivoLista()) {
+			valorVenda = valorVenda + aditivo.getValor();
 		}
 		
 		return valorVenda;

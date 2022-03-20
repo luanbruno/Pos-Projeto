@@ -1,12 +1,8 @@
-package br.edu.infnet.apipedido.model.domain;
+package br.edu.infnet.dashboard.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import br.edu.infnet.dashboard.model.exceptions.AmperagemInvalidoException;
 
-import br.edu.infnet.apipedido.model.exceptions.AmperagemInvalidoException;
 
-@Entity
-@Table(name = "TBateria")
 public class Bateria extends Produto{
 
 	private String peso;

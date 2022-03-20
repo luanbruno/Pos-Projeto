@@ -12,11 +12,11 @@ public class Usuario {
 
 	private Endereco endereco;	
 
-	private List<Solicitante> solicitantes;
+	private List<Cliente> clientes;
 
 	private List<Produto> produtos;
 
-	private List<Pedido> pedidos;
+	private List<Venda> vendas;
 	
 	public Usuario() {
 	}
@@ -58,13 +58,6 @@ public class Usuario {
 		this.admin = admin;
 	}
 
-	public List<Solicitante> getSolicitantes() {
-		return solicitantes;
-	}
-
-	public void setSolicitantes(List<Solicitante> solicitantes) {
-		this.solicitantes = solicitantes;
-	}
 
 	public Endereco getEndereco() {
 		return endereco;
@@ -82,11 +75,20 @@ public class Usuario {
 		this.produtos = produtos;
 	}
 
-	public List<Pedido> getPedidos() {
-		return pedidos;
+	public List<Cliente> getClientes() {
+		return clientes;
 	}
 
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
+
+	public List<Venda> getVendas() {
+		return vendas;
+	}
+
+	public void setVendas(List<Venda> vendas) {
+		this.vendas = vendas;
+	}
+
 }

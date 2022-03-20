@@ -1,4 +1,4 @@
-package br.edu.infnet.apipedido.model.service;
+package br.edu.infnet.dashboard.model.service;
 
 import java.util.List;
 

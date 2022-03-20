@@ -16,8 +16,8 @@ public class Lubrificante extends Produto {
 	public Lubrificante() {
 	}
 		
-	public Lubrificante(String nome, String fabricante, Integer validade) {
-		super(nome,fabricante,validade);
+	public Lubrificante(String nome, String fabricante, Integer valor) {
+		super(nome,fabricante,valor);
 	}
 	
 	@Override
@@ -56,7 +56,7 @@ public class Lubrificante extends Produto {
 	public void setMotor(String motor) throws MotorInvalidoException{
 		
 
-		if (motor.equals("diesel") != motor.equals("flex")) {
+		if (motor.equals("diesel") != motor.equals("flex")){
 			
 		}else {
 			throw new MotorInvalidoException("Oleo de motor não trabalhado");

@@ -17,8 +17,8 @@ public class Bateria extends Produto{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Bateria(String nome, String fabricante, Integer validade) {
-		super(nome,fabricante,validade);
+	public Bateria(String nome, String fabricante, Integer valor) {
+		super(nome,fabricante,valor);
 	}
 	
 	@Override

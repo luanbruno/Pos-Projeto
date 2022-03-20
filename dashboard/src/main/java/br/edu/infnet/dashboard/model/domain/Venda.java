@@ -1,41 +1,21 @@
-package br.edu.infnet.apipedido.model.domain;
+package br.edu.infnet.dashboard.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "TVenda")
 public class Venda {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Integer id;
 	
 	private LocalDateTime data;
 	private String movimento;
 	private String tipo;
 		
-	@OneToOne(cascade = CascadeType.DETACH) 
-	@JoinColumn(name = "idCliente")	
 	private Cliente cliente;
 	
-	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Produto> produtos;
 	
-	@ManyToOne
-	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	
 	@Override

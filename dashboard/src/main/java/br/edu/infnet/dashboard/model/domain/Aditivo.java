@@ -1,13 +1,8 @@
 
-package br.edu.infnet.apipedido.model.domain;
+package br.edu.infnet.dashboard.model.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import br.edu.infnet.dashboard.model.exceptions.AditivoInvalidoException;
 
-import br.edu.infnet.apipedido.model.exceptions.AditivoInvalidoException;
-
-@Entity
-@Table(name = "TAditivo")
 public class Aditivo extends Produto{
 
 	private String composicao;

@@ -5,104 +5,87 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import br.edu.infnet.dashboard.model.exceptions.PesoInvalidoException;
-import br.edu.infnet.dashboard.model.exceptions.ValorInvalidoException;
-
 @JsonTypeInfo( 		
 		use = JsonTypeInfo.Id.NAME, 		
 		include = JsonTypeInfo.As.PROPERTY, 		
 		property = "tipo")
 @JsonSubTypes({ 	
-	@JsonSubTypes.Type(value = Bebida.class, name = "Bebida"), 	
-	@JsonSubTypes.Type(value = Comida.class, name = "Comida") 
+	@JsonSubTypes.Type(value = Aditivo.class, name = "Aditivo"), 	
+	@JsonSubTypes.Type(value = Lubrificante.class, name = "Lubrificante"), 
+	@JsonSubTypes.Type(value = Bateria.class, name = "Bateria") 
 })
 public abstract class Produto {
 
 	private Integer id;
-	private String descricao;
-	private float valor;
-	private float peso;
-
-	private List<Pedido> pedidos;
-
+	private String nome;
+	private String fabricante;
+	private int valor;
+	
+	private List<Venda> vendas;
+	
 	private Usuario usuario;
 	
 	public Produto() {
 		
 	}
 	
-	public Produto(String descricao, float valor, float peso) throws ValorInvalidoException, PesoInvalidoException {
-		
-		if(valor < 0) {
-			throw new ValorInvalidoException("Impossível cadastrar o produto: valor negativo!");
-		}
-		
-		if(valor == 0) {
-			throw new ValorInvalidoException("Impossível cadastrar o produto: valor zerado!");
-		}
-
-		if(peso < 0) {
-			throw new PesoInvalidoException("Impossível cadastrar o produto: peso negativo!");
-		}
-		
-		if(peso == 0) {
-			throw new PesoInvalidoException("Impossível cadastrar o produto: peso zerado!");
-		}
-
-		this.descricao = descricao;
+	public Produto(String nome, String fabricante, Integer valor) {
+		this.nome = nome;
+		this.fabricante = fabricante;
 		this.valor = valor;
-		this.peso = peso;
 	}
 	
-	public abstract float calcularValorVenda();
+	
+	public abstract String Aplicacao();
 	
 	@Override
 	public String toString() {
 		
-		StringBuilder sb = new StringBuilder();
-
-		sb.append(id);
-		sb.append(";");
-		sb.append(descricao);
-		sb.append(";");
-		sb.append(valor);
-		sb.append(";");
-		sb.append(peso);
-		sb.append(";");
-		sb.append(this.calcularValorVenda());
+		StringBuilder ip = new StringBuilder();
 		
-		return sb.toString();
+		ip.append(id);
+		ip.append(';');
+		ip.append(nome);
+		ip.append(';');
+		ip.append(fabricante);
+		ip.append(';');
+		ip.append(valor);
+		ip.append(";");
+		ip.append(this.Aplicacao());
+		
+		return ip.toString();
 	}
 
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public float getValor() {
+	public String getFabricante() {
+		return fabricante;
+	}
+
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+
+	public int getValor() {
 		return valor;
 	}
 
-	public void setValor(float valor) {
+	public void setValor(int valor) {
 		this.valor = valor;
-	}
-
-	public float getPeso() {
-		return peso;
-	}
-
-	public void setPeso(float peso) {
-		this.peso = peso;
 	}
 
 	public Usuario getUsuario() {
@@ -113,11 +96,13 @@ public abstract class Produto {
 		this.usuario = usuario;
 	}
 
-	public List<Pedido> getPedidos() {
-		return pedidos;
+	public List<Venda> getVendas() {
+		return vendas;
 	}
 
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
+	public void setVendas(List<Venda> vendas) {
+		this.vendas = vendas;
+	}	
+	
+
 }

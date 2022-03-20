@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import br.edu.infnet.dashboard.model.service.SolicitanteService;
 
 @Controller
-public class SolicitanteController {
+public class ClienteController {
 	
 	@Autowired
 	private SolicitanteService solicitanteService;
