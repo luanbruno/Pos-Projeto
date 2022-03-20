@@ -150,7 +150,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Vendas</h6>
                                 </div>
                                 <div class="card-body">
-                                	<c:forEach var="pedidoUser" items="${vendasPorUsuario}">
+                                	<c:forEach var="vendaUser" items="${vendasPorUsuario}">
                                     <h4 class="small font-weight-bold">${vendaUser.nome} <span
                                             class="float-right">${vendaUser.vendas.size()}</span></h4>
 <!--                                     <div class="progress mb-4"> -->

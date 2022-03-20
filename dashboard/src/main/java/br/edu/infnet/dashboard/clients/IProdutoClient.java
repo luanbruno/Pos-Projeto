@@ -16,12 +16,12 @@ public interface IProdutoClient {
 	@GetMapping(value = "/listar")
 	public List<Produto> obterLista();
 	
-	@GetMapping(value = "/aditivo/listar")
+	@GetMapping(value = "/listar/aditivo")
 	public List<Aditivo> obterAditivoLista();
 
-	@GetMapping(value = "/bateria/listar")
+	@GetMapping(value = "/listar/bateria")
 	public List<Bateria> obterBateriaLista();
 	
-	@GetMapping(value = "/lubrificante/listar")
+	@GetMapping(value = "/listar/lubrificante")
 	public List<Lubrificante> obterLubrificanteLista();
 }

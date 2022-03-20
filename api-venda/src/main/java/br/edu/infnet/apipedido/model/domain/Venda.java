@@ -126,5 +126,4 @@ public class Venda {
 		this.usuario = usuario;
 	}
 
-	
 }

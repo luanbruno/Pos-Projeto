@@ -68,7 +68,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Data</th>
-                                            <th>Descrição</th>
+                                            <th>Tipo</th>
                                             <th>Cliente</th>
                                             <th>Produtos</th>
                                         </tr>
@@ -77,7 +77,7 @@
                                     	<c:forEach var="p" items="${listagem}">
                                         <tr>
                                             <td>${p.data}</td>
-                                            <td>${p.Tipo}</td>
+                                            <td>${p.tipo}</td>
                                             <td>${p.cliente.nome}</td>
                                             <td>${p.produtos.size()}</td>
                                         </tr>

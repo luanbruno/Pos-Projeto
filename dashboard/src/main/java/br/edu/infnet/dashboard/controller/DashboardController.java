@@ -39,7 +39,7 @@ public class DashboardController {
 	@GetMapping(value = "/")
 	public String index(Model model) {
 
-		//produtos e pedidos por usuário
+		//produtos e vendas por usuário
 		List<Usuario> usuarios = usuarioService.obterLista();		
 		model.addAttribute("vendasPorUsuario", usuarios);		
 		model.addAttribute("produtosPorUsuario", usuarios);
@@ -47,7 +47,7 @@ public class DashboardController {
 		//quantidade de vendas
 		model.addAttribute("qtdeVendas", vendaService.obterQuantidade());
 		
-		//valor de vendos dos produtos
+		//valor de vendas dos produtos
 		model.addAttribute("valorVendaAditivo", aditivoService.calcularValorVenda());
 		model.addAttribute("valorVendaBateria", bateriaService.calcularValorVenda());
 		model.addAttribute("valorVendaLubrificante", LubrificanteService.calcularValorVenda());
