@@ -27,8 +27,8 @@ public class Venda {
 	private String movimento;
 	private String tipo;
 		
-	@OneToOne(cascade = CascadeType.DETACH) 
-	@JoinColumn(name = "idCliente")	
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
 	
 	@ManyToMany(cascade = CascadeType.DETACH)

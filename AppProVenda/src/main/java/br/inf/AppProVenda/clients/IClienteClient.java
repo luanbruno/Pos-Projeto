@@ -29,6 +29,6 @@ public interface IClienteClient {
 	@GetMapping(value = "/qtde")
 	public Long obterQtde();
 
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/{id}/obter")
 	public Cliente obterPorId(@PathVariable Integer id);	
 }
