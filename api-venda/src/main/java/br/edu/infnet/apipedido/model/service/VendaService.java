@@ -19,10 +19,10 @@ public class VendaService {
 	public List<Venda> obterLista() {		
 		return (List<Venda>) vendaRepository.findAll(Sort.by(Sort.Direction.ASC, "data"));
 	}
-//	
-//	public List<Venda> obterLista(Integer idUser){
-//		return vendaRepository.findAll(idUser, Sort.by(Sort.Direction.ASC, "data"));
-//	}	
+	
+	public List<Venda> obterLista(Integer idUser){
+		return vendaRepository.findAll(idUser, Sort.by(Sort.Direction.ASC, "data"));
+	}	
 
 	public void incluir(Venda venda) {
 		vendaRepository.save(venda);

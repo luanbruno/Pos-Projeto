@@ -3,8 +3,6 @@ package br.edu.infnet.apipedido.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import br.edu.infnet.apipedido.model.exceptions.AmperagemInvalidoException;
-
 @Entity
 @Table(name = "TBateria")
 public class Bateria extends Produto{
@@ -51,11 +49,8 @@ public class Bateria extends Produto{
 	public int getAmperagem() {
 		return amperagem;
 	}
-	public void setAmperagem(int amperagem) throws AmperagemInvalidoException {
-		
-		if (amperagem <= 0) {
-			throw new AmperagemInvalidoException("Aperagem não trabalhada!");
-		}		
+	public void setAmperagem(int amperagem){
+			
 		this.amperagem = amperagem;
 	}
 	@Override

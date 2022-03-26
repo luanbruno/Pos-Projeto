@@ -31,6 +31,7 @@ public class Cliente {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;	
+	
 	public Cliente() {
 		//
 	}

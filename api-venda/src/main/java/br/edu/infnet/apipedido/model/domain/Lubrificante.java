@@ -3,8 +3,6 @@ package br.edu.infnet.apipedido.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import br.edu.infnet.apipedido.model.exceptions.MotorInvalidoException;
-
 @Entity
 @Table(name = "TLubrificante")
 public class Lubrificante extends Produto {
@@ -53,14 +51,7 @@ public class Lubrificante extends Produto {
 		return motor;
 	}
 
-	public void setMotor(String motor) throws MotorInvalidoException{
-		
-
-		if (motor.equals("diesel") != motor.equals("flex")){
-			
-		}else {
-			throw new MotorInvalidoException("Oleo de motor não trabalhado");
-		}
+	public void setMotor(String motor){
 		
 		this.motor = motor;
 	}

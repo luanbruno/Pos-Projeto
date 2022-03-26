@@ -4,8 +4,6 @@ package br.edu.infnet.apipedido.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import br.edu.infnet.apipedido.model.exceptions.AditivoInvalidoException;
-
 @Entity
 @Table(name = "TAditivo")
 public class Aditivo extends Produto{
@@ -61,11 +59,8 @@ public class Aditivo extends Produto{
 		return embalagem;
 	}
 
-	public void setEmbalagem(int embalagem) throws AditivoInvalidoException{
-		
-		if (embalagem != 500 && embalagem != 1 && embalagem != 20) {
-			throw new AditivoInvalidoException("tamanho de embalagm não trabalhado");
-		}		
+	public void setEmbalagem(int embalagem){
+			
 		
 		this.embalagem = embalagem;
 	}

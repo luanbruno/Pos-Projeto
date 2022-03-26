@@ -1,18 +1,13 @@
 package br.edu.infnet.apipedido.model.domain;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "TUsuario")
@@ -26,23 +21,23 @@ public class Usuario {
 	private String senha;
 	private boolean admin;
 	@OneToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "idendereco")
+	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;	
 	
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "idUsuario")
-	@JsonIgnore
-	private List<Cliente> clientes;
-	
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "idUsuario")
-	@JsonIgnore
-	private List<Produto> Produtos;
-	
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "idUsuario")
-	@JsonIgnore
-	private List<Venda> Vendas;
+//	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+//	@JoinColumn(name = "idUsuario")
+//	@JsonIgnore
+//	private List<Cliente> clientes;
+//	
+//	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+//	@JoinColumn(name = "idUsuario")
+//	@JsonIgnore
+//	private List<Produto> Produtos;
+//	
+//	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+//	@JoinColumn(name = "idUsuario")
+//	@JsonIgnore
+//	private List<Venda> Vendas;
 	
 	
 	public Usuario() {
