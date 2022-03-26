@@ -36,5 +36,6 @@ public class BateriaService {
 	public Bateria obterPorId(Integer id) {
 
 		return bateriaClient.obterPorId(id);
+		
 	}
 }

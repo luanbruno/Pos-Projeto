@@ -22,9 +22,11 @@ public class Cliente {
 	private String nome;
 	private String email;
 	private String cpf;
+	
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idendereco")
 	private Endereco endereco;	
+	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	@JsonIgnore

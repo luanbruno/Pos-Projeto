@@ -6,8 +6,8 @@ public class AmperagemInvalidoException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 	
-	public AmperagemInvalidoException(String texto) {
-		super(texto);
+	public AmperagemInvalidoException(String mensagem) {
+		super(mensagem);
 
 	}
 	

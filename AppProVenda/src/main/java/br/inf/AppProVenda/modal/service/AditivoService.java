@@ -32,6 +32,7 @@ public class AditivoService {
 	public void incluir(Aditivo aditivo) {
 
 		aditivoClient.incluir(aditivo);
+		//aditivoRepository.save(aditivo);
 	}
 
 	public Aditivo obterPorId(Integer id) {

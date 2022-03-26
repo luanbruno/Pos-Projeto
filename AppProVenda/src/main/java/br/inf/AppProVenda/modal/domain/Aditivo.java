@@ -16,7 +16,7 @@ public class Aditivo extends Produto{
 	
 	@Override
 	public String Aplicacao() {
-		return "O aditivo do"+super.getFabricante()+" com embalagem de"+embalagem+"!";
+		return "O aditivo do fabricante "+super.getFabricante();
 	}
 		
 	@Override

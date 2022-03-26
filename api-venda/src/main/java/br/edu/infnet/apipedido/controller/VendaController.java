@@ -26,10 +26,10 @@ public class VendaController {
 		return vendaService.obterLista();
 	}
 	
-	@GetMapping(value = "/{idUser}/listar")
-	public List<Venda> obterLista(@PathVariable Integer idUser){
-		return vendaService.obterLista(idUser);
-	}	
+//	@GetMapping(value = "/{idUser}/listar")
+//	public List<Venda> obterLista(@PathVariable Integer idUser){
+//		return vendaService.obterLista(idUser);
+//	}	
 
 	@PostMapping(value = "/incluir")
 	public void incluir(@RequestBody Venda venda) {

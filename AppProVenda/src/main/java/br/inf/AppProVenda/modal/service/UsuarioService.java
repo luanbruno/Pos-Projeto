@@ -13,9 +13,11 @@ public class UsuarioService {
 
 	@Autowired
 	private IUsuarioClient usuarioClient;
+	@Autowired
 	
 	public void incluir(Usuario usuario) {		
 		usuarioClient.incluir(usuario);
+
 	}
 
 	public List<Usuario> obterLista() {		
@@ -27,7 +29,9 @@ public class UsuarioService {
 	}
 
 	public Long obterQtde() {
-		return usuarioClient.obterQtde();
+//		return usuarioClient.obterQtde();
+		return (long) usuarioClient.obterLista().size();
+
 	}
 
 	public Usuario validar(String email, String senha) {		
@@ -35,6 +39,12 @@ public class UsuarioService {
 	}
 	
 	public Usuario obterPorId(Integer id) {
-		return usuarioClient.obterPorId(id);
+		for (Usuario usuario : usuarioClient.obterLista()) {
+			if (usuario.getId().equals(id)) {
+				return usuario;
+			}
+		}
+		return null;
+//		return usuarioClient.obterPorId(id);
 	}
 }

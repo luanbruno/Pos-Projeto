@@ -15,7 +15,7 @@ public class VendaService {
 	
 	@Autowired
 	private IVendaClient vendaClient;
-	
+
 	public Long obterQtde() {
 		return vendaClient.obterQtde();
 	}
@@ -29,7 +29,8 @@ public class VendaService {
 	}
 
 	public void incluir(Venda venda) {
-		vendaClient.incluir(venda);		
+		vendaClient.incluir(venda);	
+		
 	}
 	
 	public void excluir(Integer id) {

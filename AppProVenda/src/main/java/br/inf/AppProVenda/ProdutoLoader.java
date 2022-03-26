@@ -29,7 +29,7 @@ public class ProdutoLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
+	
 		Usuario usuario = new Usuario();
 
 		Bateria bateria = new Bateria("bateria de moto", "moura", 120);
@@ -38,7 +38,7 @@ public class ProdutoLoader implements ApplicationRunner {
 		bateria.setPeso("2");
 		bateria.setUsuario(usuario);
 				
-		bateriaService.incluir(bateria);
+	bateriaService.incluir(bateria);
 		
 		Aditivo aditivo = new Aditivo("aditivo d radiador", "acdelco", 50);
 		aditivo.setComposicao("organico");
@@ -52,7 +52,7 @@ public class ProdutoLoader implements ApplicationRunner {
 		lubrificante.setRefinamento("mineral");
 		lubrificante.setViscosidade("20w50");
 		lubrificante.setMotor("diesel");
-		lubrificante.setUsuario(usuario);
+	lubrificante.setUsuario(usuario);
 				
 		lubrificanteService.incluir(lubrificante);
 				

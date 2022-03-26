@@ -26,12 +26,15 @@ public class Usuario {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idendereco")
 	private Endereco endereco;
+	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Cliente> clientes;
+	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Produto> produtos;
+	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Venda> vendas;

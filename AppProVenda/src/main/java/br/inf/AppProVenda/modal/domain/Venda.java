@@ -11,8 +11,11 @@ public class Venda {
 	private LocalDateTime data;
 	private String movimento;
 	private String tipo;
+	
 	private Cliente cliente;
+	
 	private List<Produto> produtos;
+	
 	private Usuario usuario;
 	
 	@Override

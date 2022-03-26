@@ -23,26 +23,24 @@ public class UsuarioLoader implements ApplicationRunner {
 		String email = "admin@infnet.edu.br";
 		String senha = "123";
 		
-		Usuario usuario = usuarioService.validar(email, senha);
+		Usuario usuario = new Usuario();
 		
-		if(usuario == null) {
-			Endereco endereco = new Endereco();
-			endereco.setBairro("bairro admin");
-			endereco.setCep("cep admin");
-			endereco.setComplemento("complemento admin");
-			endereco.setLocalidade("localidade admin");
-			endereco.setLogradouro("logradouro admin");
-			endereco.setUf("UF");
+//			Endereco endereco = new Endereco();
+//			endereco.setBairro("bairro admin");
+//			endereco.setCep("cep admin");
+//			endereco.setComplemento("complemento admin");
+//			endereco.setLocalidade("localidade admin");
+//			endereco.setLogradouro("logradouro admin");
+//			endereco.setUf("UF");
 			
-			usuario = new Usuario();
 			usuario.setEmail(email);
 			usuario.setNome("luan b s branco");
 			usuario.setSenha(senha);
 			usuario.setAdmin(true);
-			usuario.setEndereco(endereco);
+//			usuario.setEndereco(endereco);
 			
 			usuarioService.incluir(usuario);
-		}
+		
 		
 	}
 }

@@ -16,6 +16,7 @@ public class ClienteService {
 	@Autowired
 	private IClienteClient clienteClient;
 
+
 	public Long obterQtde() {
 		return clienteClient.obterQtde();
 	}
@@ -32,7 +33,7 @@ public class ClienteService {
 
 	public void incluir(Cliente cliente) {
 
-		clienteClient.incluir(cliente);		
+		clienteClient.incluir(cliente);	
 	}
 	
 	public void excluir(Integer id) {

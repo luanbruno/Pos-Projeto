@@ -31,6 +31,7 @@ public class Venda {
 	
 	@OneToOne(cascade = CascadeType.DETACH) 
 	@JoinColumn(name = "idCliente")
+	@JsonIgnore
 	private Cliente cliente;
 
 	@ManyToMany(cascade = CascadeType.DETACH)

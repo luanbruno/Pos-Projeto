@@ -15,6 +15,7 @@ public class LubrificanteService {
 	@Autowired
 	private ILubrificanteClient lubrificanteClient;
 
+
 	public Long obterQtde() {
 		return lubrificanteClient.obterQtde();
 	}
@@ -31,10 +32,12 @@ public class LubrificanteService {
 	public void incluir(Lubrificante lubrificante) {
 
 		lubrificanteClient.incluir(lubrificante);
+
 	}
 
 	public Lubrificante obterPorId(Integer id) {
 
 		return lubrificanteClient.obterPorId(id);
+		
 	}
 }
